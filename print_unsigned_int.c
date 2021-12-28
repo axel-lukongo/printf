@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:43:15 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/28 19:16:33 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/28 23:11:38 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,24 @@ char	*ft_uitoa(unsigned int nb)
 
 	i = nb_digit(nb, 10);
 	str = malloc(sizeof(char) * i + 1);
-	if(!str)
-		return(NULL);
+	if (!str)
+		return (NULL);
 	str[i] = '\0';
 	while (nb > 0)
 	{
 		str[--i] = (nb % 10) + '0';
 		nb = nb / 10;
 	}
-	return(str);
+	return (str);
 }
 
-int ft_unsigned(unsigned int nb)
+int	ft_unsigned(unsigned int nb)
 {
 	char	*str;
 	int		len;
 
 	len = 1;
-	if(nb == 0)
+	if (nb == 0)
 		ft_putchar(0 + '0');
 	else
 	{

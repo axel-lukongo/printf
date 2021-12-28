@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:04 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/28 20:23:08 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/28 23:13:07 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ int	conv(char c, va_list args)
 	int	len;
 	
 	len = 0;
-	if(c == 's')
+	if (c == 's')
 		len = ft_putstr(va_arg(args, char *));//good
-	else if(c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		len = ft_putnbr(va_arg(args, int), 10, "0123456789");//good
-	else if(c == 'x')
+	else if (c == 'x')
 		len = ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
-	else if(c == 'u')
+	else if (c == 'u')
 		len = ft_unsigned(va_arg(args, unsigned int)); //good
-	else if(c == 'c')
+	else if (c == 'c')
 		len = ft_putchar(va_arg(args, int)); //good
-	else if(c == 'p')
+	else if (c == 'p')
 	{
 		write(1, "0x", 2);
 		len = ft_putnbr_base(va_arg(args, int), "0123456789abcdef") + 2;

@@ -6,13 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:35:54 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/28 19:19:35 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/28 23:06:39 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
