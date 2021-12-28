@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:35:54 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/26 18:39:34 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/28 19:19:35 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,63 +43,26 @@ int	ft_putstr(char *str)
 
 int ft_putnbr(int nbr, int i,char *base)
 {
-  int lb;
-  
-  lb = 0;
-  if(nbr > -1)
+	int		lb;
+	char	*str;
+	lb = 0;
+	if(nbr > -1)
 	{
 		if(nbr < 0)
 		{
-			ft_putchar('-');
+			lb += ft_putchar('-');
 			nbr *= -1;
 		}
 		if(nbr > 0)
 		{
-			ft_putnbr(nbr/i,i,base);
-			nbr = nbr%i;
-			ft_putchar(base[nbr]);
+			str = ft_uitoa(nbr);
+			lb = ft_putstr(str);
 		}
 	}
 	else
-		write(1, "-1", 2);
-	return(1);
-}
-
-int ft_tcheker(char *base, int i)
-{
-  i = 0;
-  int tchek;
-  tchek = 1;
-  if(base[0] == '\0' || base[1] == '\0')
-    return(1) ;
-    
-  while(base[i] != '\0')
-    {
-      if(base[i] <= 47 || base[i] >= 123 || base[i] >= ':' && base[i] <= '@')
-	return(1);
-  
-
-      while(base[tchek] != '\0')
 	{
-	  if(base[tchek] == base[i])
-	    return(1);
-	  tchek++;
+		write(1, "-1", 2);
+		lb += 2;
 	}
-      i++;
-      tchek = i+1;
-    }
-  return(0);
-}
-
-void ft_putnbr_base(int nbr, char *base)
-{
-	int i;
-	i = 0;
-	if(ft_tcheker(base,i) == 1)
-		return;
-	//i=0;
-	while(base[i] != '\0')
-		i++;
-	if(nbr > 0)
-		ft_putnbr(nbr,i,base);
+	return(lb);
 }

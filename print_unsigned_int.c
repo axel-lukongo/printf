@@ -6,20 +6,20 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:43:15 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/23 15:31:43 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/28 19:16:33 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-int	nb_digit(unsigned int nb)
+int	nb_digit(unsigned int nb, int base)
 {
 	int	i;
 
 	i = 0;
 	while (nb > 0)
 	{
-		nb = nb / 10;
+		nb = nb / base;
 		i++;
 	}
 	return (i);
@@ -30,7 +30,7 @@ char	*ft_uitoa(unsigned int nb)
 	int	i;
 	char *str;
 
-	i = nb_digit(nb);
+	i = nb_digit(nb, 10);
 	str = malloc(sizeof(char) * i + 1);
 	if(!str)
 		return(NULL);
@@ -43,15 +43,19 @@ char	*ft_uitoa(unsigned int nb)
 	return(str);
 }
 
-void ft_unsigned(unsigned int nb)
+int ft_unsigned(unsigned int nb)
 {
-	char *str;
+	char	*str;
+	int		len;
 
+	len = 1;
 	if(nb == 0)
 		ft_putchar(0 + '0');
 	else
 	{
 		str = ft_uitoa(nb);
-		ft_putstr(str);
+		len = ft_putstr(str);
+		free(str);
 	}
+	return (len);
 }

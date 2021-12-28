@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:07 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/26 18:33:34 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/28 19:16:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		ft_strlen(char *s);
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_putnbr(int nbr, int i, char *base);
-void	ft_putnbr_base(int nbr, char *base);
-void	ft_unsigned(unsigned int nb);
+int		ft_putnbr_base(int nbr, char *base);
+int		ft_unsigned(unsigned int nb);
+char	*ft_uitoa(unsigned int nb);
+int		nb_digit(unsigned int nb, int base);
 #endif
