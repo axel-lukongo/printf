@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:04 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/28 23:13:07 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:30:34 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 int	conv(char c, va_list args)
 {
 	int	len;
-	
+
 	len = 0;
 	if (c == 's')
-		len = ft_putstr(va_arg(args, char *));//good
+		len = ft_putstr(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
-		len = ft_putnbr(va_arg(args, int), 10, "0123456789");//good
+		len = ft_putnbr(va_arg(args, int), 10, "0123456789");
 	else if (c == 'x')
 		len = ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 	else if (c == 'u')
-		len = ft_unsigned(va_arg(args, unsigned int)); //good
+		len = ft_unsigned(va_arg(args, unsigned int));
 	else if (c == 'c')
-		len = ft_putchar(va_arg(args, int)); //good
+		len = ft_putchar(va_arg(args, int));
 	else if (c == 'p')
 	{
 		write(1, "0x", 2);
 		len = ft_putnbr_base(va_arg(args, int), "0123456789abcdef") + 2;
 	}
-	else if(c == '%')
-		len = ft_putchar('%'); //good
+	else if (c == '%')
+		len = ft_putchar('%');
 	return (len);
 }
 
@@ -48,7 +48,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if(str[i] == '%')
+		if (str[i] == '%')
 			len += conv(str[++i], args);
 		else
 		{
@@ -60,7 +60,7 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (len);
 }
-
+/*
 int main()
 {
 	//char tab[6] = "ca va";
@@ -71,4 +71,4 @@ int main()
 	nb = ft_printf("other %x\n", i);
 	
 	printf("printf = %d myprintf = %d", re, nb);
-}
+}*/

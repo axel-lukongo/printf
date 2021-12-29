@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:43:15 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/28 23:11:38 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:32:59 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	nb_digit(unsigned int nb, int base)
 
 char	*ft_uitoa(unsigned int nb)
 {
-	int	i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = nb_digit(nb, 10);
 	str = malloc(sizeof(char) * i + 1);

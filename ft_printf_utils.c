@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:35:54 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/28 23:06:39 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:28:08 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,20 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int ft_putnbr(int nbr, int i,char *base)
+int	ft_putnbr(int nbr, int i, char *base)
 {
 	int		lb;
 	char	*str;
+
 	lb = 0;
-	if(nbr > -1)
+	if (nbr > -1)
 	{
-		if(nbr < 0)
+		if (nbr < 0)
 		{
 			lb += ft_putchar('-');
 			nbr *= -1;
 		}
-		if(nbr > 0)
+		if (nbr > 0)
 		{
 			str = ft_uitoa(nbr);
 			lb = ft_putstr(str);
@@ -64,5 +65,5 @@ int ft_putnbr(int nbr, int i,char *base)
 		write(1, "-1", 2);
 		lb += 2;
 	}
-	return(lb);
+	return (lb);
 }
