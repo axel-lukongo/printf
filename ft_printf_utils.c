@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:35:54 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 18:34:06 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 19:16:51 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,16 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-		ft_putchar(str[i++]);
+	if (str)
+	{
+		while (str[i] != '\0')
+			ft_putchar(str[i++]);
+	}
+	else
+	{
+		write(1, "(null)", 6);
+		i = 6;
+	}
 	return (i);
 }
 
@@ -47,23 +55,18 @@ int	ft_putnbr(int nbr)
 	char	*str;
 
 	lb = 0;
-	if (nbr > -1)
+	if (nbr < 0)
 	{
-		if (nbr < 0)
-		{
-			lb += ft_putchar('-');
-			nbr *= -1;
-		}
-		if (nbr > 0)
-		{
-			str = ft_uitoa(nbr);
-			lb = ft_putstr(str);
-		}
+		lb += ft_putchar('-');
+		nbr *= -1;
 	}
-	else
+	str = ft_uitoa(nbr);
+	lb += ft_putstr(str);
+	free(str);
+/*	else
 	{
 		write(1, "-1", 2);
 		lb += 2;
-	}
+	}*/
 	return (lb);
 }

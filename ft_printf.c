@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:04 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 18:35:48 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 19:23:52 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	conv(char c, va_list args)
 		len = ft_putstr(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
 		len = ft_putnbr(va_arg(args, int));
-	else if (c == 'x')
+	else if (c == 'x' || c == 'X')
 		len = ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 	else if (c == 'u')
 		len = ft_unsigned(va_arg(args, unsigned int));
@@ -60,15 +60,15 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (len);
 }
-/*
-int main()
+
+int	main(void)
 {
-	//char tab[6] = "ca va";
-	int i = -123;
-	int nb;
-	int re;
+	int					nb;
+	int					re;
+	unsigned int		i;
+
+	i = -5;
 	re = printf("reel %x\n", i);
 	nb = ft_printf("other %x\n", i);
-	
 	printf("printf = %d myprintf = %d", re, nb);
-}*/
+}
