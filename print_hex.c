@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:16:56 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 18:32:46 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:36:46 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	ft_tcheker(char *base, int i)
 		return (1);
 	while (base[i] != '\0')
 	{
-		if (base[i] <= 47 || base[i] >= 123 || base[i] >= ':' && base[i] <= '@')
+		if ((base[i] <= 47 || base[i] >= 123 || base[i] >= ':')
+			&& (base[i] <= '@'))
 			return (1);
 		while (base[tchek] != '\0')
 		{

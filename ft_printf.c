@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:04 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 18:30:34 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:35:48 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	conv(char c, va_list args)
 	if (c == 's')
 		len = ft_putstr(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
-		len = ft_putnbr(va_arg(args, int), 10, "0123456789");
+		len = ft_putnbr(va_arg(args, int));
 	else if (c == 'x')
 		len = ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 	else if (c == 'u')
