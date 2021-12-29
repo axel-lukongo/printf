@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:35:54 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 18:28:08 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:34:06 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_putnbr(int nbr, int i, char *base)
+int	ft_putnbr(int nbr)
 {
 	int		lb;
 	char	*str;
