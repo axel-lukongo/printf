@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:43:15 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 19:03:05 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/30 17:14:22 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	nb_digit(unsigned int nb, int base)
 	int	i;
 
 	i = 0;
+	if (nb == 0)
+		i++;
 	while (nb > 0)
 	{
 		nb = nb / base;

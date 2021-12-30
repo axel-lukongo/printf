@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:35:54 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/29 19:16:51 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/12/30 15:58:09 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,5 @@ int	ft_putnbr(int nbr)
 	str = ft_uitoa(nbr);
 	lb += ft_putstr(str);
 	free(str);
-/*	else
-	{
-		write(1, "-1", 2);
-		lb += 2;
-	}*/
 	return (lb);
 }
