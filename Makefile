@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:14:48 by alukongo          #+#    #+#              #
-#    Updated: 2021/12/30 15:54:16 by alukongo         ###   ########.fr        #
+#    Updated: 2022/01/01 19:33:29 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MANDATORY = ft_printf.c\
 			ft_printf_utils.c\
 			print_hex.c\
 			print_unsigned_int.c\
-			print_address.c\
+			print_ptr.c\
 
 MANDATORY_SRCS	=	${MANDATORY}
 

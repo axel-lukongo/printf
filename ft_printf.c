@@ -6,12 +6,11 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:04 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/30 17:51:45 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/01/01 22:48:03 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
-#include<limits.h>
 
 int	conv(char c, va_list args)
 {
@@ -32,7 +31,7 @@ int	conv(char c, va_list args)
 		len = ft_putchar(va_arg(args, int));
 	else if (c == 'p')
 	{
-		len = print_address(va_arg(args, int), "0123456789abcdef");
+		len = print_address(va_arg(args, unsigned long long), "0123456789abcdef");
 	}
 	else if (c == '%')
 		len = ft_putchar('%');
@@ -65,14 +64,16 @@ int	ft_printf(const char *str, ...)
 /*
 int	main(void)
 {
-	long long unsigned int					nb = LONG_MAX;
-	long long int	tes = LONG_MIN ;
+	long long unsigned int					nb = 41;
+	long long int	tes = 42 ;
 	void*				i;
 	void*	r;
+	int re;
+	
 	r = &tes;
 	i = &nb;
-	printf("reel %p %p\n", i, r);
-	nb = ft_printf("other %p %p\n", i, r);
-//	printf("printf = %d myprintf = ", re);
+	re = printf("r %p %p\n", i, r);
+	nb = ft_printf("o %p %p\n", i, r);
+	printf("printf = %d myprintf = %d", re, nb);
 }
 */
