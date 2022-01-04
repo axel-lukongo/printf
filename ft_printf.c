@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:36:04 by alukongo          #+#    #+#             */
-/*   Updated: 2022/01/04 13:41:59 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/01/04 17:33:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (len);
 }
-/*
+
 int	main(void)
 {
 	long long unsigned int					nb = 41;
@@ -69,9 +69,8 @@ int	main(void)
 //	int re;
 	
 	r = &tes;
-	i = &nb;
+	i = NULL;
 	printf("r %p %p\n", i, r);
 	ft_printf("o %p %p\n", i, r);
 	//printf("printf = %d myprintf = %d", re, nb);
 }
-*/

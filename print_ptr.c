@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:27:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/01/04 13:44:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/01/04 17:35:42 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	count_digit(uintptr_t nbr)
 	}
 	return (i);
 }
-
+/*
 int	print_address(unsigned long long nbr)
 {
 	int		len;
@@ -48,6 +48,7 @@ int	print_address(unsigned long long nbr)
 		len += count_digit(nbr);
 	}
 	else
-		len = ft_putstr("(nil)");
+		len = ft_putstr("0x0");
 	return (len);
 }
+*/
