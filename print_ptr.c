@@ -6,20 +6,19 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:27:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/01/01 22:22:01 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/01/04 13:44:31 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-void print_ptr(uintptr_t nbr, char *base)
+void	print_ptr(uintptr_t nbr, char *base)
 {
 	if (nbr > 0)
 	{
 		print_ptr(nbr / 16, base);
-		ft_putchar(base[nbr%16]);
+		ft_putchar(base[nbr % 16]);
 	}
-	
 }
 
 int	count_digit(uintptr_t nbr)
@@ -37,15 +36,15 @@ int	count_digit(uintptr_t nbr)
 	return (i);
 }
 
-int	print_address(unsigned long long nbr, char *base)
+int	print_address(unsigned long long nbr)
 {
-	int	len;
+	int		len;
 
 	len = 0;
 	if (nbr != 0)
 	{
 		len = write(1, "0x", 2);
-		print_ptr(nbr, base);
+		print_ptr(nbr, "0123456789abcdef");
 		len += count_digit(nbr);
 	}
 	else
